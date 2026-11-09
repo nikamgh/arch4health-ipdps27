@@ -242,20 +242,20 @@
   </svg>
   <div class="content">
     <div class="plaque"><img class="logo" src="{{ 'arch4health-logo3.png' | relative_url }}" alt="Arch4Health"></div>
-    {% assign a4h_title = site.title | default: "Fourth Workshop on Architecture for Health" %}
+    {% assign a4h_title = site.title | default: "Fifth Workshop on Architecture for Health" %}
     {% assign a4h_parts = a4h_title | split: " on " %}
     <h1>{% if a4h_parts.size == 2 %}<span class="edition">{{ a4h_parts[0] }} on</span>{{ a4h_parts[1] }}{% else %}{{ a4h_title }}{% endif %}</h1>
     <p class="lede">A half-day workshop exploring<br>the key computational challenges in health-related applications and<br>the vital role of computer architecture in overcoming them to advance healthcare</p>
     <div class="actions">
-      <a class="a4h-btn solid" href="#agenda-materials">See the program</a>
+      <a class="a4h-btn solid" href="#call-for-presentations">Call for presentations</a>
     </div>
   </div>
   <div class="a4h-facts">
-    <div><span>Date</span><strong>Sunday, 1 November 2026</strong></div>
-    <div><span>Time</span><strong>13:00 – 17:00 EET</strong></div>
-    <div><span>Location</span><strong>Athens, Greece</strong></div>
-    <div><span>Room</span><strong>Ypsilon I</strong></div>
-    <div><span>In conjunction with</span><strong><a href="https://www.microarch.org/micro59/index.php">MICRO 2026</a></strong></div>
+    <div><span>Date</span><strong>Wednesday, 2 June 2027</strong></div>
+    <div><span>Time</span><strong>Morning (exact time TBA)</strong></div>
+    <div><span>Location</span><strong>Seattle, USA</strong></div>
+    <div><span>Room</span><strong>To be announced</strong></div>
+    <div><span>In conjunction with</span><strong><a href="https://www.ipdps.org/ipdps2027/">IPDPS 2027</a></strong></div>
   </div>
   <p class="a4h-countdown" id="a4h-countdown" aria-live="polite"></p>
 </header>
@@ -284,27 +284,15 @@
 
 <section class="a4h-section" id="agenda-materials">
   <h2>Program</h2>
-  <p class="intro">Sunday, 1 November 2026, 13:00 to 17:00 local time (EET, UTC+2), in room Ypsilon I. Presenting authors are underlined.</p>
-  <ol class="a4h-program">
-    <li class="minor" data-start="11:00" data-end="11:10"><span class="t">13:00 – 13:10</span><div><span class="title">Welcome</span><span class="aff">Organizers</span></div></li>
-    <li class="invited" data-start="11:10" data-end="12:00"><span class="t">13:10 – 14:00</span><div><span class="title">Accelerating Genome Analysis</span><span class="who">Onur Mutlu</span><span class="aff">ETH Zurich</span></div></li>
-    <li data-start="12:00" data-end="12:20"><span class="t">14:00 – 14:20</span><div><span class="title">BeSA: Benchmarks for Simulating Agent-based Models in Architecture Research</span><span class="who"><span class="presenter">Amina Sokoli</span>, Abdullah Giray Yağlıkçı</span><span class="aff">CISPA Helmholtz Center for Information Security</span></div></li>
-    <li data-start="12:20" data-end="12:40"><span class="t">14:20 – 14:40</span><div><span class="title">From Wi-Fi Offloading to On-Device NPU Inference: A Working Wearable for Presbyopia Correction</span><span class="who"><span class="presenter">Arturo Vicente-Jaén</span>, Juan L. Aragón, Pablo Artal</span><span class="aff">Universidad de Murcia</span></div></li>
-    <li data-start="12:40" data-end="13:00"><span class="t">14:40 – 15:00</span><div><span class="title">STAGE-Med: An Interactive Multi-Agent Framework for Medical Diagnosis Based on Structured Action Spaces and Global Exploration</span><span class="who"><span class="presenter">Weiqi Li</span><sup>1</sup>, Zihao Pu<sup>1</sup>, Mengyun Zhang<sup>2</sup>, Haiyu Mao<sup>1</sup></span><span class="aff"><sup>1</sup>King’s College London, <sup>2</sup>Tsinghua University</span></div></li>
-    <li class="minor break" data-start="13:00" data-end="13:30"><span class="t">15:00 – 15:30</span><div><span class="title">☕ Coffee break</span></div></li>
-    <li class="invited" data-start="13:30" data-end="14:15"><span class="t">15:30 – 16:15</span><div><span class="title">Sparse by Nature, Parallel by Design: HPC for the Life Sciences</span><span class="who">Giulia Guidi</span><span class="aff">Cornell University</span></div></li>
-    <li data-start="14:15" data-end="14:35"><span class="t">16:15 – 16:35</span><div><span class="title">Benchmarking and Accelerating Single-Cell Analysis</span><span class="who"><span class="presenter">Wonyoung Cheon</span>, Timur Eke, Eirini Tzermpou, Konstantina Koliogeorgi, Nika Mansouri Ghiasi, Onur Mutlu</span><span class="aff">ETH Zurich</span></div></li>
-    <li data-start="14:35" data-end="14:55"><span class="t">16:35 – 16:55</span><div><span class="title">Towards Fast and Efficient Genomic Analysis with Analog In-Memory Computing Hardware</span><span class="who">Peiyi He</span><span class="aff">The University of Hong Kong</span></div></li>
-    <li class="minor" data-start="14:55" data-end="15:00"><span class="t">16:55 – 17:00</span><div><span class="title">Concluding remarks</span><span class="aff">Organizers</span></div></li>
-  </ol>
+  <p class="intro">Wednesday morning, 2 June 2027, at the Hyatt Regency Bellevue (Seattle, USA). The detailed program will be announced after the notification date.</p>
 </section>
 
 <section class="a4h-section" id="call-for-presentations">
   <h2>Call for Presentations</h2>
   <div class="a4h-cfp">
     <div>
-      <p>This workshop consists of talks on the general topic of computing system designs for healthcare applications and new trends and bottlenecks in data-intensive healthcare applications. There are a limited number of slots for talks. If you are interested in delivering a talk on related topics, <strong>please submit your talk’s title and extended abstract via the Google Form below</strong>. You may either paste the abstract directly into the form or upload a two-page PDF prepared in any standard conference template. Each submission must include the talk title, all authors’ names, and their affiliations.</p>
-      <p><a class="a4h-btn solid" href="https://docs.google.com/forms/d/e/1FAIpQLSfy_IaEbtvIkF-QesWAZzZ4AcHL3KVgaHmNR3xFFx5_A7aFkA/viewform?usp=dialog">Submit an abstract</a></p>
+      <p>This workshop consists of talks on the general topic of computing system designs for healthcare applications and new trends and bottlenecks in data-intensive healthcare applications. There are a limited number of slots for talks. If you are interested in delivering a talk on related topics, <strong>please submit your talk’s title and extended abstract by 28 January 2027</strong>. Extended abstracts are up to two pages, prepared in any standard conference template. Each submission must include the talk title, all authors’ names, and their affiliations.</p>
+      <p><strong>The submission site will be announced here soon.</strong></p>
       <p>We invite abstract submissions related to (but not limited to) the following topics:</p>
       <div class="a4h-topics">
         <div><h4>Computational biology</h4><ul class="a4h-chips"><li>Genomics</li><li>Metagenomics</li><li>Gene editing</li><li>Drug design and discovery</li><li>Proteomics</li><li>Other areas in precision medicine</li></ul></div>
@@ -317,9 +305,9 @@
     <aside class="a4h-dates" id="key-dates">
       <h3>Key dates</h3>
       <ol>
-        <li data-date="2026-10-04T23:59:59-12:00"><span>Extended abstract deadline</span><strong>4 October 2026</strong></li>
-        <li data-date="2026-10-09T23:59:59-12:00"><span>Notification</span><strong>9 October 2026</strong></li>
-        <li data-date="2026-11-01T15:00:00Z"><span>Workshop</span><strong>1 November 2026</strong></li>
+        <li data-date="2027-01-28T23:59:59-12:00"><span>Extended abstract deadline</span><strong>28 January 2027</strong></li>
+        <li data-date="2027-02-28T23:59:59-12:00"><span>Notification</span><strong>28 February 2027</strong></li>
+        <li data-date="2027-06-02T23:59:59-07:00"><span>Workshop</span><strong>2 June 2027</strong></li>
       </ol>
     </aside>
   </div>
@@ -390,16 +378,13 @@
     <a href="https://events.safari.ethz.ch/micro25-arch4health/" target="_blank" rel="noopener"><strong>MICRO 2025</strong><span>Seoul, South Korea</span></a>
     <a href="https://events.safari.ethz.ch/hpca26-arch4health/" target="_blank" rel="noopener"><strong>HPCA 2026</strong><span>Sydney, Australia</span></a>
     <a href="https://events.safari.ethz.ch/ics26-arch4health/" target="_blank" rel="noopener"><strong>ICS 2026</strong><span>Belfast, United Kingdom</span></a>
+    <a href="https://events.safari.ethz.ch/micro26-arch4health/" target="_blank" rel="noopener"><strong>MICRO 2026</strong><span>Athens, Greece</span></a>
   </div>
 </section>
 
 <section class="a4h-section" id="livestream">
   <h2>Livestream</h2>
-  <p class="intro">Can’t make it to Athens? The whole afternoon is streamed live on YouTube.</p>
-  <div class="a4h-video">
-    <iframe src="https://www.youtube.com/embed/L7hRn1h81bM" title="Arch4Health @ MICRO 2026 livestream" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
-  </div>
-  <p style="margin-top:0.75rem;"><a href="https://youtube.com/live/L7hRn1h81bM">Open the stream on YouTube</a></p>
+  <p class="intro">Can’t make it to Seattle? The livestream link will be announced closer to the workshop.</p>
 </section>
 
 <footer class="a4h-foot">
@@ -410,8 +395,12 @@
 
 <script>
 (function () {
-  var start = Date.parse("2026-11-01T11:00:00Z");   /* 13:00 EET */
-  var end   = Date.parse("2026-11-01T15:00:00Z");   /* 17:00 EET */
+  /* Exact session times are not announced yet (Wednesday morning, 2 June 2027, Seattle, PDT = UTC-7).
+     Until they are, the countdown targets the start of the day and shows days only.
+     Once known: set start/end to the real times and timeKnown to true. */
+  var start = Date.parse("2027-06-02T00:00:00-07:00");
+  var end   = Date.parse("2027-06-02T13:00:00-07:00");
+  var timeKnown = false;
   var box = document.getElementById("a4h-countdown");
 
   function pad(n) { return n < 10 ? "0" + n : "" + n; }
@@ -422,17 +411,18 @@
       if (now < start) {
         var s = Math.floor((start - now) / 1000);
         var d = Math.floor(s / 86400), h = Math.floor(s % 86400 / 3600), m = Math.floor(s % 3600 / 60), sec = s % 60;
-        box.innerHTML = "Starts in <b>" + (d > 0 ? d + "d " : "") + pad(h) + "h " + pad(m) + "m " + pad(sec) + "s</b>";
+        if (timeKnown) box.innerHTML = "Starts in <b>" + (d > 0 ? d + "d " : "") + pad(h) + "h " + pad(m) + "m " + pad(sec) + "s</b>";
+        else box.innerHTML = d > 0 ? "Starts in <b>" + (d + 1) + " days</b>" : "Starts <b>tomorrow</b>";
       } else if (now < end) {
-        box.innerHTML = "<b>Happening now</b> — join us in Athens or on the livestream.";
+        box.innerHTML = (timeKnown ? "<b>Happening now</b>" : "<b>Happening today</b>") + " — join us in Seattle or on the livestream.";
       } else {
-        box.textContent = "Thank you for joining us! The recording stays available on YouTube.";
+        box.textContent = "Thank you for joining us!";
       }
     }
     var rows = document.querySelectorAll(".a4h-program li[data-start]");
     for (var i = 0; i < rows.length; i++) {
-      var a = Date.parse("2026-11-01T" + rows[i].getAttribute("data-start") + ":00Z");
-      var b = Date.parse("2026-11-01T" + rows[i].getAttribute("data-end") + ":00Z");
+      var a = Date.parse("2027-06-02T" + rows[i].getAttribute("data-start") + ":00Z");
+      var b = Date.parse("2027-06-02T" + rows[i].getAttribute("data-end") + ":00Z");
       rows[i].classList.toggle("now", now >= a && now < b);
     }
   }
