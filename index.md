@@ -63,11 +63,10 @@
     color: #DDEBF3;
   }
   .a4h-hero .content { position: relative; z-index: 1; max-width: 560px; }
-  .a4h-hero .plaque {
-    display: inline-block; background: #fff; border-radius: 14px; padding: 0.6rem 0.9rem; margin-bottom: 1.6rem;
-    box-shadow: 0 0 0 1px rgba(21,169,186,0.4), 0 12px 32px rgba(0,20,40,0.35);
-  }
-  .a4h-hero .logo { display: block; width: min(360px, 68vw); height: auto; }
+  /* The logo sits directly on the hero. arch4health-logo-hero.png is the transparent logo with the
+     caduceus filled white and a teal outline around the badge, so it reads on the dark background. */
+  .a4h-hero .plaque { display: inline-block; margin: 0 0 1.4rem -0.2rem; }
+  .a4h-hero .logo { display: block; width: min(400px, 72vw); height: auto; filter: drop-shadow(0 10px 22px rgba(0,0,0,0.4)); }
   .a4h-hero h1 {
     font-family: var(--display); font-weight: 700; color: #fff;
     font-size: clamp(2.1rem, 5.4vw, 3.4rem); line-height: 1.04; letter-spacing: -0.03em;
@@ -268,7 +267,7 @@
     <path style="--d:.55s" d="M440 280 H380 L355 255 H270"/><circle style="--d:.55s" cx="261" cy="255" r="9"/>
   </svg>
   <div class="content">
-    <div class="plaque"><img class="logo" src="{{ 'arch4health-logo3.png' | relative_url }}" alt="Arch4Health"></div>
+    <div class="plaque"><img class="logo" src="{{ 'arch4health-logo-hero.png' | relative_url }}" alt="Arch4Health"></div>
     {% assign a4h_title = site.title | default: "Fifth Workshop on Architecture for Health" %}
     {% assign a4h_parts = a4h_title | split: " on " %}
     <h1>{% if a4h_parts.size == 2 %}<span class="edition">{{ a4h_parts[0] }} on</span>{{ a4h_parts[1] }}{% else %}{{ a4h_title }}{% endif %}</h1>
