@@ -68,7 +68,8 @@
   }
   .a4h-hero .content { position: relative; z-index: 1; max-width: 560px; }
   .a4h-hero .plaque { display: inline-block; margin: 0 0 3.4rem -0.15rem; }
-  .a4h-hero .logo { display: block; width: min(360px, 68vw); height: auto; }
+  /* The Primer theme paints every .markdown-body img white; the logo is transparent, so undo that */
+  .markdown-body .a4h-hero .logo, .a4h-hero .logo { display: block; width: min(360px, 68vw); height: auto; background: transparent !important; }
   .a4h-hero h1 {
     font-family: var(--display); font-weight: 700; color: #fff;
     font-size: clamp(2.1rem, 5.4vw, 3.4rem); line-height: 1.04; letter-spacing: -0.03em;
