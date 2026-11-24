@@ -41,12 +41,15 @@
   /* ---------- Sticky nav ---------- */
   .a4h-nav {
     position: sticky; top: 0; z-index: 20;
-    display: flex; gap: 0.35rem; overflow-x: auto; scrollbar-width: none;
-    padding: 0.6rem 0; margin-bottom: 1.25rem;
+    display: flex; align-items: center; gap: 0.35rem; overflow-x: auto; scrollbar-width: none;
+    padding: 0.5rem 0; margin-bottom: 1.25rem;
     background: rgba(255,255,255,0.92); backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--line);
   }
   .a4h-nav::-webkit-scrollbar { display: none; }
+  .a4h-nav .brand { flex: none; display: flex; align-items: center; padding: 0; margin-right: 0.75rem; border-radius: 8px; }
+  .a4h-nav .brand:hover { background: transparent; }
+  .a4h-nav .brand img { display: block; height: 46px; width: auto; }
   .a4h-nav a {
     flex: none; padding: 0.35rem 0.6rem; border-radius: 999px;
     font-size: 0.88rem; font-weight: 600; color: var(--navy); text-decoration: none;
@@ -58,15 +61,11 @@
   /* ---------- Hero: the logo's navy square, with its circuit traces ---------- */
   .a4h-hero {
     position: relative; overflow: hidden; isolation: isolate;
-    padding: 2rem 2rem 1.75rem; border-radius: 22px;
+    padding: 2.75rem 2rem 1.75rem; border-radius: 22px;
     background: radial-gradient(120% 90% at 100% 0%, #0A4470 0%, var(--navy) 55%, var(--navy-deep) 100%);
     color: #DDEBF3;
   }
   .a4h-hero .content { position: relative; z-index: 1; max-width: 560px; }
-  /* The logo sits directly on the hero. arch4health-logo-hero.png is the transparent logo with the
-     caduceus filled white and a teal outline around the badge, so it reads on the dark background. */
-  .a4h-hero .plaque { display: inline-block; margin: 0 0 1.4rem -0.2rem; }
-  .a4h-hero .logo { display: block; width: min(400px, 72vw); height: auto; filter: drop-shadow(0 10px 22px rgba(0,0,0,0.4)); }
   .a4h-hero h1 {
     font-family: var(--display); font-weight: 700; color: #fff;
     font-size: clamp(2.1rem, 5.4vw, 3.4rem); line-height: 1.04; letter-spacing: -0.03em;
@@ -244,9 +243,10 @@
   }
 </style>
 
-<div class="a4h">
+<div class="a4h" id="top">
 
 <nav class="a4h-nav" aria-label="Page sections">
+  <a class="brand" href="#top" aria-label="Arch4Health — back to top"><img src="{{ 'arch4health-logo3.png' | relative_url }}" alt="Arch4Health"></a>
   <a href="#description">About</a>
   <a href="#agenda-materials">Program</a>
   <a href="#call-for-presentations">Call for Presentations</a>
@@ -267,7 +267,6 @@
     <path style="--d:.55s" d="M440 280 H380 L355 255 H270"/><circle style="--d:.55s" cx="261" cy="255" r="9"/>
   </svg>
   <div class="content">
-    <div class="plaque"><img class="logo" src="{{ 'arch4health-logo-hero.png' | relative_url }}" alt="Arch4Health"></div>
     {% assign a4h_title = site.title | default: "Fifth Workshop on Architecture for Health" %}
     {% assign a4h_parts = a4h_title | split: " on " %}
     <h1>{% if a4h_parts.size == 2 %}<span class="edition">{{ a4h_parts[0] }} on</span>{{ a4h_parts[1] }}{% else %}{{ a4h_title }}{% endif %}</h1>
