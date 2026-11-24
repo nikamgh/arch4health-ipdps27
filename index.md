@@ -41,15 +41,12 @@
   /* ---------- Sticky nav ---------- */
   .a4h-nav {
     position: sticky; top: 0; z-index: 20;
-    display: flex; align-items: center; gap: 0.35rem; overflow-x: auto; scrollbar-width: none;
-    padding: 0.5rem 0; margin-bottom: 1.25rem;
+    display: flex; gap: 0.35rem; overflow-x: auto; scrollbar-width: none;
+    padding: 0.6rem 0; margin-bottom: 1.25rem;
     background: rgba(255,255,255,0.92); backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--line);
   }
   .a4h-nav::-webkit-scrollbar { display: none; }
-  .a4h-nav .brand { flex: none; display: flex; align-items: center; padding: 0; margin-right: 0.75rem; border-radius: 8px; }
-  .a4h-nav .brand:hover { background: transparent; }
-  .a4h-nav .brand img { display: block; height: 46px; width: auto; }
   .a4h-nav a {
     flex: none; padding: 0.35rem 0.6rem; border-radius: 999px;
     font-size: 0.88rem; font-weight: 600; color: var(--navy); text-decoration: none;
@@ -61,11 +58,17 @@
   /* ---------- Hero: the logo's navy square, with its circuit traces ---------- */
   .a4h-hero {
     position: relative; overflow: hidden; isolation: isolate;
-    padding: 2.75rem 2rem 1.75rem; border-radius: 22px;
-    background: radial-gradient(120% 90% at 100% 0%, #0A4470 0%, var(--navy) 55%, var(--navy-deep) 100%);
+    padding: 2rem 2rem 1.75rem; border-radius: 22px;
+    /* Light at the top so the logo sits directly on it, fading to navy before the title starts */
+    background:
+      linear-gradient(180deg, #F3F9FB 0, #E9F6F8 120px, rgba(233,246,248,0) 215px),
+      radial-gradient(120% 90% at 100% 0%, #0A4470 0%, var(--navy) 55%, var(--navy-deep) 100%);
+    border: 1px solid var(--line);
     color: #DDEBF3;
   }
   .a4h-hero .content { position: relative; z-index: 1; max-width: 560px; }
+  .a4h-hero .plaque { display: inline-block; margin: 0 0 3.4rem -0.15rem; }
+  .a4h-hero .logo { display: block; width: min(360px, 68vw); height: auto; }
   .a4h-hero h1 {
     font-family: var(--display); font-weight: 700; color: #fff;
     font-size: clamp(2.1rem, 5.4vw, 3.4rem); line-height: 1.04; letter-spacing: -0.03em;
@@ -234,7 +237,8 @@
 
   /* ---------- Small screens ---------- */
   @media (max-width: 720px) {
-    .a4h-hero { padding: 1.5rem 1.15rem 1.25rem; }
+    .a4h-hero { padding: 1.5rem 1.15rem 1.25rem; background-image: linear-gradient(180deg, #F3F9FB 0, #E9F6F8 80px, rgba(233,246,248,0) 165px), radial-gradient(120% 90% at 100% 0%, #0A4470 0%, var(--navy) 55%, var(--navy-deep) 100%); }
+    .a4h-hero .plaque { margin-bottom: 2.6rem; }
     .a4h-hero .lede { width: auto; }
     .a4h-circuit { width: 70%; top: 0.5rem; right: -12%; opacity: 0.35; }
     .a4h-about, .a4h-cfp, .a4h-people { grid-template-columns: 1fr; }
@@ -243,10 +247,9 @@
   }
 </style>
 
-<div class="a4h" id="top">
+<div class="a4h">
 
 <nav class="a4h-nav" aria-label="Page sections">
-  <a class="brand" href="#top" aria-label="Arch4Health — back to top"><img src="{{ 'arch4health-logo3.png' | relative_url }}" alt="Arch4Health"></a>
   <a href="#description">About</a>
   <a href="#agenda-materials">Program</a>
   <a href="#call-for-presentations">Call for Presentations</a>
@@ -267,6 +270,7 @@
     <path style="--d:.55s" d="M440 280 H380 L355 255 H270"/><circle style="--d:.55s" cx="261" cy="255" r="9"/>
   </svg>
   <div class="content">
+    <div class="plaque"><img class="logo" src="{{ 'arch4health-logo3.png' | relative_url }}" alt="Arch4Health"></div>
     {% assign a4h_title = site.title | default: "Fifth Workshop on Architecture for Health" %}
     {% assign a4h_parts = a4h_title | split: " on " %}
     <h1>{% if a4h_parts.size == 2 %}<span class="edition">{{ a4h_parts[0] }} on</span>{{ a4h_parts[1] }}{% else %}{{ a4h_title }}{% endif %}</h1>
