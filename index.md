@@ -20,6 +20,9 @@
     --line: #D3E2E8;
     --ink: #1C2D3B;
     --muted: #4F6577;
+    --coral: #FF6B4A;        /* submission call-to-action */
+    --coral-deep: #E8532F;
+    --amber: #FFC24B;        /* deadline highlight */
     --display: "Bricolage Grotesque", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     --body: "Source Sans 3", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     font-family: var(--body);
@@ -94,6 +97,30 @@
   .a4h-hero .a4h-btn.solid:hover { background: #3BC2D1; }
   .a4h-btn.ghost { background: transparent; color: #fff !important; border: 1.5px solid rgba(255,255,255,0.7); }
   .a4h-btn.ghost:hover { background: rgba(255,255,255,0.1); border-color: #fff; }
+  .a4h-btn.submit, .a4h-hero .a4h-btn.submit {
+    background: var(--coral); color: var(--navy-deep) !important;
+    box-shadow: 0 8px 22px rgba(255,107,74,0.35); transition: transform .15s ease, background .15s ease;
+  }
+  .a4h-btn.submit:hover, .a4h-hero .a4h-btn.submit:hover { background: var(--coral-deep); transform: translateY(-1px); }
+
+  /* Submission strip: deadline + submit button, sits between the hero copy and the facts row */
+  .a4h-submit {
+    position: relative; z-index: 1;
+    display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.25rem;
+    margin-bottom: 1.25rem; padding: 0.9rem 1.1rem; border-radius: 14px;
+    background: linear-gradient(120deg, rgba(255,107,74,0.22), rgba(255,194,75,0.16) 70%, rgba(255,194,75,0.08));
+    border: 1px solid rgba(255,194,75,0.55); backdrop-filter: blur(6px);
+  }
+  .a4h-submit .deadline { display: flex; align-items: center; gap: 0.7rem; margin-right: auto; }
+  .a4h-submit .deadline::before {
+    content: ""; flex: none; width: 12px; height: 12px; border-radius: 50%; background: var(--amber);
+    box-shadow: 0 0 0 0 rgba(255,194,75,0.7); animation: a4h-pulse 1.8s ease-out infinite;
+  }
+  .a4h-submit .deadline span { display: block; font-size: 0.85rem; color: #FFE3AE; line-height: 1.2; }
+  .a4h-submit .deadline strong { display: block; font-family: var(--display); font-weight: 700; color: var(--amber); font-size: 1.35rem; line-height: 1.15; letter-spacing: -0.01em; }
+  .a4h-submit .deadline small { display: block; font-size: 0.8rem; color: #DDEBF3; }
+  @keyframes a4h-pulse { 0% { box-shadow: 0 0 0 0 rgba(255,194,75,0.7); } 100% { box-shadow: 0 0 0 12px rgba(255,194,75,0); } }
+  @media (prefers-reduced-motion: reduce) { .a4h-submit .deadline::before { animation: none; } }
 
   .a4h-facts {
     position: relative; z-index: 1;
@@ -247,8 +274,12 @@
     <h1>{% if a4h_parts.size == 2 %}<span class="edition">{{ a4h_parts[0] }} on</span>{{ a4h_parts[1] }}{% else %}{{ a4h_title }}{% endif %}</h1>
     <p class="lede">A half-day workshop exploring<br>the key computational challenges in health-related applications and<br>the vital role of computer architecture in overcoming them to advance healthcare</p>
     <div class="actions">
-      <a class="a4h-btn solid" href="#call-for-presentations">Call for presentations</a>
+      <a class="a4h-btn ghost" href="#call-for-presentations">Call for presentations</a>
     </div>
+  </div>
+  <div class="a4h-submit">
+    <div class="deadline"><div><span>Submission deadline</span><strong>28 January 2027</strong><small>anywhere on Earth · notification 28 February 2027</small></div></div>
+    <a class="a4h-btn submit" href="https://ssl.linklings.net/conferences/ipdps/?page=Submit&amp;id=Arch4HealthWorkshopFullSubmission&amp;site=ipdps2027" target="_blank" rel="noopener">Submit an abstract</a>
   </div>
   <div class="a4h-facts">
     <div><span>Date</span><strong>Wednesday, 2 June 2027</strong></div>
@@ -292,7 +323,7 @@
   <div class="a4h-cfp">
     <div>
       <p>This workshop consists of talks on the general topic of computing system designs for healthcare applications and new trends and bottlenecks in data-intensive healthcare applications. There are a limited number of slots for talks. If you are interested in delivering a talk on related topics, <strong>please submit your talk’s title and extended abstract by 28 January 2027</strong>. Extended abstracts are up to two pages, prepared in any standard conference template. Each submission must include the talk title, all authors’ names, and their affiliations.</p>
-      <p><strong>The submission site will be announced here soon.</strong></p>
+      <p><a class="a4h-btn submit" href="https://ssl.linklings.net/conferences/ipdps/?page=Submit&amp;id=Arch4HealthWorkshopFullSubmission&amp;site=ipdps2027" target="_blank" rel="noopener">Submit an abstract</a></p>
       <p>We invite abstract submissions related to (but not limited to) the following topics:</p>
       <div class="a4h-topics">
         <div><h4>Computational biology</h4><ul class="a4h-chips"><li>Genomics</li><li>Metagenomics</li><li>Gene editing</li><li>Drug design and discovery</li><li>Proteomics</li><li>Other areas in precision medicine</li></ul></div>
